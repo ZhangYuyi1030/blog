@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block bloglist %}
+    {{ object_list }}
+    {{ object }}
+{% for obj in object_list %}
+<div class="each-content">
+    <h3>
+    <a href="{% url 'article:detail' obj.pk %}">{{ obj.title }}</a>
+    </h3>
+    <!-- <figure><img src="{{ obj.img.url }}" alt="{{ obj.title }}" style="width:50px;height:50px " ></figure>  -->
+    <ul>
+    <p>{{ obj.description }}</p>
+    <a  <!-- title="{{ obj.title }}" -->  href="{% url 'article:detail' obj.pk%}" target="_blank" >阅读全文&gt;&gt;</a>
+    </ul>
+    <p>
+    <span>{{ obj.create_time }}</span><br/>             <!-- 文章创建时间 -->
+    <span>作者：{{ obj.user }}</span><br/>              <!-- 文章用户  -->
+    <span>个人博客：[<a href="#">{{ obj.category }}</a>]</span>   <!-- 文章分类对象 -->
+    </p>
+</div>
+<br/>
+{% endfor %}
+{% endblock %}

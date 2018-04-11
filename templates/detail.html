@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block bloglist %}
+<!-- <img src="{{ obj.img.url }}" alt="{{ object.title }}" style="width:550px;height: 300px;"> -->
+<ul>
+    <p>{{ object.title}}</p>
+    <p>{{ object.article|safe }}</p>      <!-- |safe 是啥-->
+</ul>
+<p>
+    <span>{{ object.create_time }}</span> <br/>
+    <span>作者：{{ object.user }}</span> <br/>
+    <span>个人博客：[<a href="#">{{ object.category }}</a>]</span>
+</p>
+<p> detial.html </p>
+{% endblock %}

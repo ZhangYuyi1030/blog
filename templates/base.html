@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Benny's Blog</title>
+    <link rel="shortcut icon" href="../static/image/smalltitle.jpg" />
+    <link rel="stylesheet"  type="text/css" href="{% static 'css/base.css'  %}"/>
+</head>
+<body>
+<h1 class="title"> BENNY'S BLOG </h1>
+<div class="main-content">
+    {% block bloglist %}
+    {% endblock %}
+</div>
+<div class="foot">
+    <p>&copy;Benny Zhang </p>
+</div>
+</body>
+</html>
